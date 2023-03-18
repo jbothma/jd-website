@@ -1,6 +1,6 @@
 ---
 title: 'This is my first project'
-last_update_date: '2020-01-01'
+lastUpdateDate: '2020-01-01'
 ---
 
 This is the start of something beautiful.

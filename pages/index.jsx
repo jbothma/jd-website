@@ -14,11 +14,10 @@ export async function getStaticProps() {
 }
 
 function Header({ title }) {
-    return <h1>{title ? title : 'Default title'}</h1>;
+    return <h1>{title}</h1>;
 }
 
 export default function HomePage({allProjectsData}) {
-    const names = ['Ada Lovelace', 'Grace Hopper', 'Margaret Hamilton'];
 
     return (
         <>
@@ -29,7 +28,7 @@ export default function HomePage({allProjectsData}) {
             <ul>
                 {allProjectsData.map(({id, lastUpdateDate, title}) => (
                     <li key={id}>
-                        <Link href={`/projects/${id}`}>{title}</Link>
+                        <Link href={`/projects/${id}`}>{title}</Link> {lastUpdateDate}
                     </li>
                 ))}
             </ul>
