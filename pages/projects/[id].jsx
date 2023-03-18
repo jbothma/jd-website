@@ -3,15 +3,15 @@ import Head from 'next/head';
 import { getAllProjectIds, getProjectData } from '../../lib/projects';
 
 export async function getStaticProps({ params }) {
-    const project = getProjectData(params.id);
+    const project = await getProjectData(params.id);
     return {
-      props: {
-        project,
-      },
+        props: {
+            project,
+        },
     };
-  }
+}
 
-export default function Project({project}) {
+export default function Project({ project }) {
     return (
         <>
             <Head>
@@ -20,6 +20,7 @@ export default function Project({project}) {
             <Link href="/">Home</Link>
 
             <h1>{project.title}</h1>
+            <div dangerouslySetInnerHTML={{ __html: project.contentHtml }} />
         </>
     );
 }
@@ -27,7 +28,7 @@ export default function Project({project}) {
 export async function getStaticPaths() {
     const paths = getAllProjectIds();
     return {
-      paths,
-      fallback: false,
+        paths,
+        fallback: false,
     };
-  }
+}
