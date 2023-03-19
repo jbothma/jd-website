@@ -25,6 +25,7 @@ export default function HomePage({allProjectsData}) {
                 <title>{title}</title>
             </Head>
             <Header title={title} />
+            <h1>Software developer && product owner</h1>
             <h2>Projects</h2>
             <ul>
                 {allProjectsData.map(({id, lastUpdateDate, title}) => (
