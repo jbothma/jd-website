@@ -18,13 +18,14 @@ function Header({ title }) {
 }
 
 export default function HomePage({allProjectsData}) {
-
+    const title = "JD Bothma"
     return (
         <>
             <Head>
-                <title>Homepage</title>
+                <title>{title}</title>
             </Head>
-            <Header title="Develop. Preview. Ship. 🚀" />
+            <Header title={title} />
+            <h2>Projects</h2>
             <ul>
                 {allProjectsData.map(({id, lastUpdateDate, title}) => (
                     <li key={id}>
